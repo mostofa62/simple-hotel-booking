@@ -1,0 +1,22 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<head>
+<title>All Room Type</title>
+</head>
+<div layout:fragment="content" id="content">
+<div class="row">
+	<div class="col-md-12">
+		<h3><span th:text="${name}" /></h3>
+	</div>
+</div>	
+	
+</div>
+
+<th:block layout:fragment="scripts">
+<script type="text/javascript">
+$(function(){
+	$("#js-content").html("From Javascript").slideToggle();
+});
+</script>
+</th:block>
+
+

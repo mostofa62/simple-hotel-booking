@@ -1,0 +1,39 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<head>
+<title>Create Room Type</title>
+</head>
+<div layout:fragment="content" id="content">
+<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+<form action="#" th:action="@{create}" th:object="${roomType}" method="post">
+    
+    <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+    	<p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>    
+	</div>
+    
+    
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span class="badge badge-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </div>
+    
+    <div class="form-group">
+    <label for="rthotel">Hotel</label>  
+    
+    <select class="form-control" id="hotelID" th:field="*{rthotel.id}">
+        <option value="">Select Hotel</option>
+        <option th:each="hotel : ${hotels}"
+                th:value="${hotel.id}"
+                th:text="${hotel.name}"></option>
+    </select>
+    
+    <span class="badge badge-danger" th:if="${#fields.hasErrors('rthotel')}" th:errors="*{rthotel}"></span>
+    </div>
+    <div class="form-group">
+    	<input class="btn btn-primary" type="submit" value="Create">
+    </div>   
+</form>
+</div>
+</div>
+</div>

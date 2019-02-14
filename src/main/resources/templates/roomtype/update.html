@@ -1,0 +1,23 @@
+<form action="#" th:action="@{{id}(id=${roomType.id})}" th:object="${roomType}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    
+    <label for="rthotel.id">Hotel</label>  
+    
+    <select id="hotelID" th:field="*{rthotel.id}">
+        <option value="">Select Hotel</option>
+        <option th:each="hotel : ${hotels}"
+                th:value="${hotel.id}"
+                th:text="${hotel.name}"></option>
+    </select>
+    
+    <span th:if="${#fields.hasErrors('rthotel')}" th:errors="*{rthotel}"></span>
+    
+   
+    
+    <input type="submit" value="Update">
+    
+       
+</form>
+
