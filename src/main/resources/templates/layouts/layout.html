@@ -8,7 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		
 <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
-
+<!-- custom css, library -->
+<th:block layout:fragment="styles"></th:block>
+<!-- custom js, library which requires to be load in head -->
+<th:block layout:fragment="head-scripts"></th:block>
 </head>
 <body>
 
@@ -18,12 +21,11 @@
 	
 </div>
 <!-- Script -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-</script>
-<th:block layout:fragment="scripts">
-</th:block>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- custom js, library which requires to be load in foot -->
+<th:block layout:fragment="scripts"></th:block>
 
 
 </body>
