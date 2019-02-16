@@ -1,1 +1,2 @@
-# Hotel Management Solution ## an application developed by Maestro Pvt Ltd
+# Hotel Management Solution 
+## an application developed by Maestro Pvt Ltd
