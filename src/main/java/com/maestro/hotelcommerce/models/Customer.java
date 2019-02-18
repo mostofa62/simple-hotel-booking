@@ -46,11 +46,20 @@ public class Customer {
 	private Date dateOfBirth;
 	
 	
+	@Column(name="phone_1", length=20)	
+	private String phoneOne;
+	
+	@Column(name="phone_2", length=20)	
+	private String phoneTwo;
+	
 	@Column(name="national_id", length=20)	
 	private String nationalId;
 	
 	@Column(name="passport_no", length=30)	
 	private String passportNo;
+	
+	@Column(name="driving_license_number", length=50)	
+	private String drivingLicenseNumber;
 	
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL)
@@ -109,9 +118,35 @@ public class Customer {
 		return passportNo;
 	}
 
+	public String getPhoneOne() {
+		return phoneOne;
+	}
+
+	public void setPhoneOne(String phoneOne) {
+		this.phoneOne = phoneOne;
+	}
+
+	public String getPhoneTwo() {
+		return phoneTwo;
+	}
+
+	public void setPhoneTwo(String phoneTwo) {
+		this.phoneTwo = phoneTwo;
+	}
+
+	public String getDrivingLicenseNumber() {
+		return drivingLicenseNumber;
+	}
+
+	public void setDrivingLicenseNumber(String drivingLicenseNumber) {
+		this.drivingLicenseNumber = drivingLicenseNumber;
+	}
+
 	public void setPassportNo(String passportNo) {
 		this.passportNo = passportNo;
 	}
+	
+	
 
 	public Address getAddress() {
 		return address;
