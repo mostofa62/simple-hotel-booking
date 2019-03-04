@@ -20,7 +20,7 @@ import com.maestro.hotelcommerce.models.Customer;
 import com.maestro.hotelcommerce.repositories.CustomerRepository;
 import com.maestro.hotelcommerce.util.Title;
 
-@Controller
+@Controller("combined CustomerController")
 @RequestMapping("/customer")
 public class CustomerController {
 	
@@ -30,7 +30,8 @@ public class CustomerController {
 	
 	@GetMapping("")
 	private String Index() {
-		return "redirect:/customer/create";
+		
+		return "customer/index";
 	}
 	
 
@@ -65,7 +66,7 @@ public class CustomerController {
 			
 			customerRepository.save(customer);
 			
-			return "redirect:/customer/create";
+			return "redirect:/customer";
 		
 	}
 	
@@ -100,7 +101,7 @@ public class CustomerController {
 		
 		customerRepository.save(customer);
 		
-		return "redirect:/customer/create";
+		return "redirect:/customer";
 		
 	}
 	

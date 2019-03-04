@@ -16,6 +16,8 @@ import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="customers")
 public class Customer {
@@ -64,6 +66,7 @@ public class Customer {
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="address_id", referencedColumnName="id")
+	@JsonManagedReference
 	private Address address;
 
 	public Long getId() {
@@ -147,7 +150,7 @@ public class Customer {
 	}
 	
 	
-
+	
 	public Address getAddress() {
 		return address;
 	}

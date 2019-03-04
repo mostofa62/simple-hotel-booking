@@ -11,6 +11,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="addresses")
 public class Address {
@@ -37,6 +39,7 @@ public class Address {
 	private short zipCode;
 	
 	@OneToOne(mappedBy="address")
+	@JsonBackReference
 	private Customer customer;
 
 	public Long getId() {

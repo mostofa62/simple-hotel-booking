@@ -1,0 +1,60 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<head>
+<title>Update customer: [[*{ customer.firstName}]] [[*{ customer.lastName}]]</title>
+</head>
+<div layout:fragment="content" id="content">
+
+
+
+<div class="row">
+<div class="col-12">
+<div class="card">
+
+<div class="card-body">
+    <h4 class="card-title">Update customer: [[*{ customer.firstName}]] [[*{ customer.lastName}]]</h4>    
+</div>
+<hr class="mt-0">
+<form action="#" th:action="@{{id}(id=${customer.id})}" th:object="${customer}" method="post">
+   
+    <input type="hidden" th:field="*{address.id}">
+    <div th:replace="customer/_form :: form"></div>
+    
+   
+    <div class="card-body">  
+	    <div class="form-group mb-0 text-right">
+	    	<button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
+	    </div>
+	</div>   
+</form>
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+<th:block layout:fragment="styles">
+<link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" />
+<link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css.map" />
+<link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
+</th:block>
+
+
+<th:block layout:fragment="scripts">
+<script src="http://momentjs.com/downloads/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+$(function(){
+	$("#dateOfBirth").datetimepicker({
+		format:'YYYY-MM-DD'
+	});
+});
+
+/*]]>*/
+</script>
+
+</th:block>
