@@ -55,6 +55,7 @@ public class RoomType {
 	
 	
 	@OneToMany(mappedBy="roomType")
+	@JsonIgnore
 	private Set<Room> rooms;
 	
 	@CreationTimestamp
