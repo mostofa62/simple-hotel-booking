@@ -1,2 +1,2 @@
-# Hotel Management Solution 
-## an application developed by Maestro Pvt Ltd
+# Simple Hotel Booking
+## Spring Boot, Angular Js, MySQL
